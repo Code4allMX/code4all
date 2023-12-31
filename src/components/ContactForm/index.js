@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Link from "@docusaurus/Link";
+
 export default function ContactForm() {
   const [token, setToken] = useState(null);
   const [email, setEmail] = useState("");
@@ -66,22 +72,58 @@ export default function ContactForm() {
           } else {
             // signup form
             return (
-              <form onSubmit={onSubmit}>
-                <h3>How may we help you?</h3>
-                <input
-                  type="email"
-                  value={email}
-                  placeholder="Your email address"
-                  onChange={(evt) => setEmail(evt.target.value)}
-                />
-                <input type="submit" value="Submit" />
-                <HCaptcha
-                  sitekey={`${process.env.HCAPTCHA_SITE_KEY}`}
-                  size="invisible"
-                  onVerify={setToken}
-                  ref={captchaRef}
-                />
-              </form>
+              <div className="container">
+                <Box
+                  component="form"
+                  sx={{
+                    "& .MuiTextField-root": { m: 1, width: "75ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <div>
+                    <h1 style={{ margin: "8px" }}>How may we help you?</h1>
+                  </div>
+                  <div>
+                    <TextField error required id="outlined-required" label="Nombre" helperText="Incorrect entry." />
+                  </div>
+                  <div>
+                    <TextField
+                      required
+                      id="outlined-required"
+                      label="Apellidos"
+                    />
+                  </div>
+                  <div>
+                    <TextField
+                      required
+                      id="outlined-multiline-static"
+                      label="Description"
+                      multiline
+                      rows={4}
+                    />
+                  </div>
+                  <div>
+                    <Link
+                      className="button button--secondary button--lg"
+                      style={{
+                        backgroundColor: "#E80052",
+                        color: "white",
+                        margin: "8px",
+                      }}
+                      onClick={onSubmit}
+                    >
+                      Submit
+                    </Link>
+                  </div>
+                  <HCaptcha
+                    sitekey={`${process.env.HCAPTCHA_SITE_KEY}`}
+                    size="invisible"
+                    onVerify={setToken}
+                    ref={captchaRef}
+                  />
+                </Box>
+              </div>
             );
           }
         }}
