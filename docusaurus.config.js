@@ -136,6 +136,9 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  plugins:[
+    'docusaurus2-dotenv'
+  ]
 };
 
 export default config;

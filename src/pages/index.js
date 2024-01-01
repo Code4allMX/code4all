@@ -1,25 +1,30 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import ContactForm from "@site/src/components/ContactForm";
 
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import Heading from "@theme/Heading";
+import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title" style={{color: 'white'}}>
+        <Heading as="h1" className="hero__title" style={{ color: "white" }}>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle" style={{color: '#ddd'}}>{siteConfig.tagline}</p>
+        <p className="hero__subtitle" style={{ color: "#ddd" }}>
+          {siteConfig.tagline}
+        </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg" style={{backgroundColor:'#E80052', color: 'white'}}
-            to="/docs/intro">
+            className="button button--secondary button--lg"
+            style={{ backgroundColor: "#E80052", color: "white" }}
+            to="/get-in-touch"
+          >
             Get in touch
           </Link>
         </div>
@@ -29,11 +34,9 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Home`}
-      description="">
+    <Layout title={`Home`} description="">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
