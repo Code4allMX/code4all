@@ -129,7 +129,7 @@ const config = {
             ],
           },
         ], */
-        copyright: `Todos los derechos reservados © ${new Date().getFullYear()} | Code4allMX`,
+        copyright: `Todos los derechos reservados © ${new Intl.DateTimeFormat('es-MX', {year :'numeric'}).format(new Date())} | Code4allMX`,
       },
       prism: {
         theme: prismThemes.github,
