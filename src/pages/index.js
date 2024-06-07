@@ -21,7 +21,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             style={{ backgroundColor: "#E80052", color: "white" }}
             //to="/get-in-touch"
-            href="https://calendly.com/code4all-calendar/consultant"
+            href="https://calendly.com/code4all-calendar/consultoria"
           >
             Get in touch
           </Link>
