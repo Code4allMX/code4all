@@ -18,8 +18,11 @@ function HomepageHeader() {
         <p className="hero__subtitle" style={{color: '#ddd'}}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg" style={{backgroundColor:'#E80052', color: 'white'}}
-            to="/docs/intro">
+            className="button button--secondary button--lg"
+            style={{ backgroundColor: "#E80052", color: "white" }}
+            //to="/get-in-touch"
+            href="https://calendly.com/code4all-calendar/consultant"
+          >
             Get in touch
           </Link>
         </div>
